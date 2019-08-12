@@ -17,6 +17,10 @@ class LeafByteActivity : AppCompatActivity(),
         findNavController(R.id.nav_host_fragment).navigate(R.id.mainMenuFragment)
     }
 
+    override fun goToSettings() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.settingsFragment)
+    }
+
     override fun startTutorial() {
         findNavController(R.id.nav_host_fragment).navigate(R.id.tutorialFragment)
     }

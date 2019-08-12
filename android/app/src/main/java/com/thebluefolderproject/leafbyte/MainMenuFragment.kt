@@ -21,8 +21,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import androidx.appcompat.app.AppCompatActivity
-
-
+import androidx.preference.PreferenceManager
 
 
 class MainMenuFragment : Fragment() {
@@ -39,7 +38,10 @@ class MainMenuFragment : Fragment() {
         view.findViewById<Button>(R.id.chooseFromGalleryButton).setOnClickListener { chooseImageFromGallery() }
         view.findViewById<Button>(R.id.takePhotoButton).setOnClickListener { takeAPhoto() }
         view.findViewById<Button>(R.id.start_tutorial).setOnClickListener { listener!!.startTutorial() }
+        view.findViewById<Button>(R.id.open_settings).setOnClickListener { listener!!.goToSettings() }
         view.findViewById<TextView>(R.id.savingSummary).setText("Dynamically set text about your save location! Potato Potato Potato Potato Potato Potato Potato Potato ")
+
+        debug(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("notifications2", false))
 
         return view
     }
@@ -129,6 +131,7 @@ class MainMenuFragment : Fragment() {
     interface OnFragmentInteractionListener {
         fun onImageSelection(imageUri: Uri)
         fun startTutorial()
+        fun goToSettings()
     }
 }
 

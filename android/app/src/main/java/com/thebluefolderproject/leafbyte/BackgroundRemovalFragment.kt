@@ -93,13 +93,13 @@ class BackgroundRemovalFragment : Fragment() {
         return view
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        val homeButton = menu!!.add("Home")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        val homeButton = menu.add("Home")
         homeButton.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT or MenuItem.SHOW_AS_ACTION_IF_ROOM)
         homeButton.setIcon(R.drawable.home)
         homeButton.setOnMenuItemClickListener { listener!!.goHome(); true }
 
-        val helpButton = menu!!.add("Help")
+        val helpButton = menu.add("Help")
         helpButton.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT or MenuItem.SHOW_AS_ACTION_IF_ROOM)
         helpButton.setIcon(R.drawable.galleryicon)
         helpButton.setOnMenuItemClickListener {

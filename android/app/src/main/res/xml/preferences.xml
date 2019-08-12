@@ -1,0 +1,17 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:title="Data Save Location"
+        app:summary="Select the kind of data that you would like to download"
+        app:key="dataSaveLocation"
+        app:defaultValue="1"
+        app:entries="@array/listArray"
+        app:entryValues="@array/listValues" />
+
+    <Preference
+        app:key="feedback"
+        app:title="Send feedback"
+        app:summary="Report technical issues or suggest new features"/>
+
+</PreferenceScreen>
